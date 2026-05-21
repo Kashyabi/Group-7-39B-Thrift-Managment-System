@@ -15,8 +15,8 @@ public class MySqlConnector implements db {
     public Connection openConnection(){
     try{
         String username= "root";
-        String password="1234";
-        String database= "apex";
+        String password="2062";
+        String database= "group7rewar";
         Connection connection;
         connection =DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/" + database,username,password
