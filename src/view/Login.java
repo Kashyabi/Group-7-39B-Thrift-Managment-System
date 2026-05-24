@@ -19,9 +19,12 @@ public class Login extends javax.swing.JFrame {
     private char defaultEchoChar;
 
     public Login() {
-        initComponents();
-        defaultEchoChar = password_textfield.getEchoChar();
-    }
+    initComponents();
+
+    defaultEchoChar = password_textfield.getEchoChar();
+
+    setupPasswordFields(); // <-- ADD THIS
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -106,6 +109,7 @@ public class Login extends javax.swing.JFrame {
         Username_textfield.addActionListener(this::Username_textfieldActionPerformed);
 
         password_textfield.setText("********");
+        password_textfield.addActionListener(this::password_textfieldActionPerformed);
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Logore.png"))); // NOI18N
 
@@ -207,16 +211,84 @@ this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_forgetpassword_btnActionPerformed
 
     private void Login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_btnActionPerformed
-// TODO add your handling code here:
+                                         
+
+    String username = Username_textfield.getText().trim();
+    String email = Email_textfield.getText().trim();
+    String password = new String(password_textfield.getPassword());
+
+    // Remove placeholder text check
+    if (password.equals("********")) {
+        password = "";
+    }
+
+    // USERNAME EMPTY
+    if (username.isEmpty()) {
+        JOptionPane.showMessageDialog(this,
+                "Username is required");
+        return;
+    }
+
+    // EMAIL EMPTY
+    if (email.isEmpty()) {
+        JOptionPane.showMessageDialog(this,
+                "Email is required");
+        return;
+    }
+
+    // EMAIL VALIDATION
+    if (!email.endsWith("@gmail.com")) {
+        JOptionPane.showMessageDialog(this,
+                "Email must contain @gmail.com");
+        return;
+    }
+
+    // PASSWORD EMPTY
+    if (password.isEmpty()) {
+        JOptionPane.showMessageDialog(this,
+                "Password is required");
+        return;
+    }
+
+    // PASSWORD LENGTH
+    if (password.length() < 8) {
+        JOptionPane.showMessageDialog(this,
+                "Password should have at least 8 characters");
+        return;
+    }
+
+    /*
+       TEMPORARY LOGIN CHECK
+       Change these later when database connection is added
+    */
+
+    String correctUsername = "admin";
+    String correctEmail = "admin@gmail.com";
+    String correctPassword = "12345678";
+
+    // LOGIN SUCCESS
+    if (username.equals(correctUsername)
+            && email.equals(correctEmail)
+            && password.equals(correctPassword)) {
+
+        JOptionPane.showMessageDialog(this,
+                "Login Successful");
+
+        // OPEN DASHBOARD LATER
+        // new Dashboard().setVisible(true);
+        // this.dispose();
+
+    } else {
+
+        JOptionPane.showMessageDialog(this,
+                "Wrong Username, Email or Password");
+    
+}// TODO add your handling code here:
     }//GEN-LAST:event_Login_btnActionPerformed
 
     private void Email_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Email_textfieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Email_textfieldActionPerformed
-
-    private void Username_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Username_textfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Username_textfieldActionPerformed
 
     private void show_hide_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_hide_btnActionPerformed
 if (isPasswordVisible) {
@@ -234,24 +306,41 @@ if (isPasswordVisible) {
     }
     
     private void setupPasswordFields() {
-    // Password Field
+
+    // Initially show ********
     password_textfield.setEchoChar((char) 0);
     password_textfield.setText("********");
+
     password_textfield.addFocusListener(new java.awt.event.FocusAdapter() {
+
+        @Override
         public void focusGained(java.awt.event.FocusEvent evt) {
+
             String current = new String(password_textfield.getPassword());
+
+            // Remove placeholder when clicked
             if (current.equals("********")) {
+
                 password_textfield.setText("");
-                password_textfield.setEchoChar('*');
+
+                // Start hiding typed characters
+                password_textfield.setEchoChar(defaultEchoChar);
             }
         }
+
+        @Override
         public void focusLost(java.awt.event.FocusEvent evt) {
+
+            // If empty after clicking away
             if (password_textfield.getPassword().length == 0) {
+
+                // Show placeholder again
                 password_textfield.setEchoChar((char) 0);
                 password_textfield.setText("********");
             }
         }
     });
+
     
 
 // TODO add your handling code here:
@@ -261,6 +350,15 @@ if (isPasswordVisible) {
 new SignUp().setVisible(true);
 this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_registertextActionPerformed
+
+    private void Username_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Username_textfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Username_textfieldActionPerformed
+
+    private void password_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_textfieldActionPerformed
+
+       // TODO add your handling code here:
+    }//GEN-LAST:event_password_textfieldActionPerformed
 
     /**
      * @param args the command line arguments

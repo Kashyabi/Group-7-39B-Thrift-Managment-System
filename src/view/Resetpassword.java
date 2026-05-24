@@ -97,6 +97,7 @@ private void setupPasswordFields() {
         Newpassword_text.setText("New Password");
 
         Newpassword_textfield.setText("jPasswordField2");
+        Newpassword_textfield.addActionListener(this::Newpassword_textfieldActionPerformed);
 
         ConfirmPassword_text.setFont(new java.awt.Font("Candara", 1, 18)); // NOI18N
         ConfirmPassword_text.setText("Confirm Password");
@@ -211,6 +212,10 @@ if (controller.resetPassword(userEmail, newPassword)) {
     javax.swing.JOptionPane.showMessageDialog(this, "Failed to update password ❌");
 }// TODO add your handling code here:
     }//GEN-LAST:event_Reset_btnActionPerformed
+
+    private void Newpassword_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Newpassword_textfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Newpassword_textfieldActionPerformed
 
     /**
      * @param args the command line arguments
