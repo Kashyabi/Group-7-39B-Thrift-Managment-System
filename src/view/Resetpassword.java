@@ -16,16 +16,57 @@ public class Resetpassword extends javax.swing.JFrame {
     private String userEmail;
 
     // ✅ Default constructor (KEEP THIS)
-    public Resetpassword() {
-        initComponents();
-    }
+   public Resetpassword() {
+    initComponents();
+    setupPasswordFields();  // ← ADD THIS LINE
+}
 
     // ✅ Constructor with email
     public Resetpassword(String email) {
-        initComponents();
-        this.userEmail = email;
-    }
+    initComponents();
+    this.userEmail = email;
+    setupPasswordFields();  // ← ADD THIS LINE
+}
 
+private void setupPasswordFields() {
+    // New Password Field
+    Newpassword_textfield.setEchoChar((char) 0);
+    Newpassword_textfield.setText("********");
+    Newpassword_textfield.addFocusListener(new java.awt.event.FocusAdapter() {
+        public void focusGained(java.awt.event.FocusEvent evt) {
+            String current = new String(Newpassword_textfield.getPassword());
+            if (current.equals("********")) {
+                Newpassword_textfield.setText("");
+                Newpassword_textfield.setEchoChar('*');
+            }
+        }
+        public void focusLost(java.awt.event.FocusEvent evt) {
+            if (Newpassword_textfield.getPassword().length == 0) {
+                Newpassword_textfield.setEchoChar((char) 0);
+                Newpassword_textfield.setText("********");
+            }
+        }
+    });
+    
+    // Confirm Password Field
+    Confirmpassword_textfield.setEchoChar((char) 0);
+    Confirmpassword_textfield.setText("********");
+    Confirmpassword_textfield.addFocusListener(new java.awt.event.FocusAdapter() {
+        public void focusGained(java.awt.event.FocusEvent evt) {
+            String current = new String(Confirmpassword_textfield.getPassword());
+            if (current.equals("********")) {
+                Confirmpassword_textfield.setText("");
+                Confirmpassword_textfield.setEchoChar('*');
+            }
+        }
+        public void focusLost(java.awt.event.FocusEvent evt) {
+            if (Confirmpassword_textfield.getPassword().length == 0) {
+                Confirmpassword_textfield.setEchoChar((char) 0);
+                Confirmpassword_textfield.setText("********");
+            }
+        }
+    });
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -56,6 +97,7 @@ public class Resetpassword extends javax.swing.JFrame {
         Newpassword_text.setText("New Password");
 
         Newpassword_textfield.setText("jPasswordField2");
+        Newpassword_textfield.addActionListener(this::Newpassword_textfieldActionPerformed);
 
         ConfirmPassword_text.setFont(new java.awt.Font("Candara", 1, 18)); // NOI18N
         ConfirmPassword_text.setText("Confirm Password");
@@ -137,8 +179,17 @@ public class Resetpassword extends javax.swing.JFrame {
         String newPassword = new String(Newpassword_textfield.getPassword()).trim();
 String confirmPassword = new String(Confirmpassword_textfield.getPassword()).trim();
 
+// Remove placeholder text
+if (newPassword.equals("********")) newPassword = "";
+if (confirmPassword.equals("********")) confirmPassword = "";
+
 if (newPassword.isEmpty() || confirmPassword.isEmpty()) {
     javax.swing.JOptionPane.showMessageDialog(this, "Fields cannot be empty ❌");
+    return;
+}
+// Password length validation
+if (newPassword.length() < 8) {
+    javax.swing.JOptionPane.showMessageDialog(this, "Password must be at least 8 characters long!", "Weak Password", javax.swing.JOptionPane.ERROR_MESSAGE);
     return;
 }
 
@@ -161,6 +212,10 @@ if (controller.resetPassword(userEmail, newPassword)) {
     javax.swing.JOptionPane.showMessageDialog(this, "Failed to update password ❌");
 }// TODO add your handling code here:
     }//GEN-LAST:event_Reset_btnActionPerformed
+
+    private void Newpassword_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Newpassword_textfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Newpassword_textfieldActionPerformed
 
     /**
      * @param args the command line arguments
