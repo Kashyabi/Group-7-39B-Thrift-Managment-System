@@ -51,6 +51,7 @@ private void refreshNotifications() {
         CartBtn = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,6 +146,8 @@ private void refreshNotifications() {
         jButton4.addActionListener(this::jButton4ActionPerformed);
         Main_panal_productcatalog.add(jButton4);
         jButton4.setBounds(370, 700, 120, 40);
+        Main_panal_productcatalog.add(jScrollPane2);
+        jScrollPane2.setBounds(0, 60, 340, 520);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -274,6 +277,7 @@ private void refreshNotifications() {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel navbar_product_catalog;
     // End of variables declaration//GEN-END:variables
 }

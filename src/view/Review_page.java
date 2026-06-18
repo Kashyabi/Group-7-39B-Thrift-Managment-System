@@ -48,6 +48,7 @@ private void refreshReviews() {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,6 +146,8 @@ private void refreshReviews() {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group7/rewear/arrow.png"))); // NOI18N
         Main_panal_productcatalog.add(jLabel2);
         jLabel2.setBounds(100, 60, 20, 50);
+        Main_panal_productcatalog.add(jScrollPane2);
+        jScrollPane2.setBounds(0, 90, 330, 210);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -250,6 +253,7 @@ UserDashboard userDash = new UserDashboard(username, userId);
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel navbar_product_catalog;
     // End of variables declaration//GEN-END:variables
 }

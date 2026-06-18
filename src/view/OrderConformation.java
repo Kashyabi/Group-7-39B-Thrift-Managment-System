@@ -65,6 +65,7 @@ public class OrderConformation extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jScrollBar1 = new javax.swing.JScrollBar();
 
         setBackground(new java.awt.Color(170, 218, 172));
         setMaximumSize(new java.awt.Dimension(1550, 840));
@@ -146,6 +147,8 @@ public class OrderConformation extends javax.swing.JPanel {
         jButton3.addActionListener(this::jButton3ActionPerformed);
         add(jButton3);
         jButton3.setBounds(870, 620, 220, 60);
+        add(jScrollBar1);
+        jScrollBar1.setBounds(150, 150, 10, 410);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -201,5 +204,6 @@ public class OrderConformation extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollBar jScrollBar1;
     // End of variables declaration//GEN-END:variables
 }
