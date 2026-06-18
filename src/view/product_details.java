@@ -114,6 +114,7 @@ public product_details(int productId, int userId) {
         star4 = new javax.swing.JLabel();
         review = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -324,6 +325,8 @@ public product_details(int productId, int userId) {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group7/rewear/arrow.png"))); // NOI18N
         Main_panal_productcatalog.add(jLabel5);
         jLabel5.setBounds(130, 90, 20, 16);
+        Main_panal_productcatalog.add(jScrollPane2);
+        jScrollPane2.setBounds(30, 130, 180, 250);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -463,6 +466,7 @@ public product_details(int productId, int userId) {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel navbar_product_catalog;

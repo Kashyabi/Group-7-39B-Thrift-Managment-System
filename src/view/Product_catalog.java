@@ -301,6 +301,7 @@ private void loadProducts() {
         searchResultLabel = new javax.swing.JLabel();
         sortComboBox = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -494,6 +495,8 @@ private void loadProducts() {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group7/rewear/arrow.png"))); // NOI18N
         Main_panal_productcatalog.add(jLabel1);
         jLabel1.setBounds(80, 60, 24, 30);
+        Main_panal_productcatalog.add(jScrollPane1);
+        jScrollPane1.setBounds(290, 80, 260, 520);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -642,6 +645,7 @@ private void loadProducts() {
     private javax.swing.JRadioButton g500to1000g_price_RadioButton_productcatalog;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JRadioButton men_RadioButton_productcatalog;
     private javax.swing.JPanel navbar_product_catalog;
