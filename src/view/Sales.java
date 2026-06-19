@@ -72,7 +72,7 @@ private void loadSalesData() {
         jPanel3.setBackground(new java.awt.Color(170, 218, 172));
 
         jButton1.setBackground(new java.awt.Color(170, 218, 172));
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButton1.setText("Add Product");
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -85,7 +85,7 @@ private void loadSalesData() {
         jButton2.setContentAreaFilled(false);
 
         jButton3.setBackground(new java.awt.Color(170, 218, 172));
-        jButton3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
         jButton3.setText("Dashboard");
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
