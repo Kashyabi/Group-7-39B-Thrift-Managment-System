@@ -85,7 +85,7 @@ private void loadSalesData() {
         jButton2.setContentAreaFilled(false);
 
         jButton3.setBackground(new java.awt.Color(170, 218, 172));
-        jButton3.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButton3.setText("Dashboard");
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
