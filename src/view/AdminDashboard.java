@@ -75,28 +75,40 @@ public class AdminDashboard extends javax.swing.JPanel {
         jButton1.setBackground(new java.awt.Color(170, 218, 172));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
         jButton1.setText("Add Product");
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
 
         jButton2.setBackground(new java.awt.Color(170, 218, 172));
         jButton2.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
         jButton2.setText("Orders ");
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
 
         jButton3.setBackground(new java.awt.Color(170, 218, 172));
         jButton3.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
         jButton3.setText("Dashboard");
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
         jButton3.addActionListener(this::jButton3ActionPerformed);
 
         jButton4.setBackground(new java.awt.Color(170, 218, 172));
         jButton4.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
         jButton4.setText("Edit Product");
+        jButton4.setBorderPainted(false);
+        jButton4.setContentAreaFilled(false);
         jButton4.addActionListener(this::jButton4ActionPerformed);
 
         jButton5.setBackground(new java.awt.Color(170, 218, 172));
         jButton5.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
         jButton5.setText("Inventory");
+        jButton5.setBorderPainted(false);
+        jButton5.setContentAreaFilled(false);
 
         jButton7.setBackground(new java.awt.Color(170, 218, 172));
         jButton7.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
         jButton7.setText("Reports");
+        jButton7.setBorderPainted(false);
+        jButton7.setContentAreaFilled(false);
 
         jButton8.setBackground(new java.awt.Color(170, 218, 172));
         jButton8.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N

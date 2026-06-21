@@ -137,7 +137,7 @@ public class Sales extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(58, 125, 68));
 
-        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jLabel1.setText("Admin");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
