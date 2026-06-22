@@ -17,10 +17,17 @@ public class Cart extends javax.swing.JFrame {
     private JLabel subtotalValue, discountValue, totalValue;
     private JLabel lblCartBadge; // Added badge variable
 
+    // 1. Default Constructor
     public Cart() {
         this("Guest", -1);
     }
 
+    // 2. NEW CONSTRUCTOR: This perfectly matches your NavigationBar code!
+    public Cart(int userId) {
+        this("Guest", userId);
+    }
+
+    // 3. Detailed Constructor
     public Cart(String username, int userId) {
         this.username = username;
         this.userId = userId;
