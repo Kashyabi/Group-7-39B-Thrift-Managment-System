@@ -157,7 +157,7 @@ public class UserDashboard extends javax.swing.JFrame {
         jButton3.setContentAreaFilled(false);
         jButton3.addActionListener(this::jButton3ActionPerformed);
 
-        jButton4.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButton4.setText("Notification");
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
@@ -186,7 +186,7 @@ public class UserDashboard extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,7 +226,7 @@ public class UserDashboard extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(58, 125, 68));
-        jLabel14.setText("user@gmail.com");
+        jLabel14.setText("user@gmail");
 
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2026-05-28 144328.png"))); // NOI18N
 
