@@ -165,7 +165,7 @@ private void loadSalesData() {
                 .addContainerGap())
         );
 
-        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 26)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial Black", 1, 26)); // NOI18N
         jLabel2.setText("Sales Report");
 
         jPanel6.setBackground(new java.awt.Color(232, 255, 233));
