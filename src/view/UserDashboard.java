@@ -708,6 +708,7 @@ private void loadRecentActivities() {
         java.awt.EventQueue.invokeLater(() -> new UserDashboard().setVisible(true));
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Logo_productcatalog;
     private javax.swing.JButton jButton1;

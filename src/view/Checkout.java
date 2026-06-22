@@ -15,6 +15,7 @@ public class Checkout extends javax.swing.JFrame {
     private String username;
     private int userId;
     private controller.CartController cartController = new controller.CartController();
+    private javax.swing.JLabel lblCartBadge;
 
     /**
      * Creates new form Checkout
@@ -27,6 +28,8 @@ public class Checkout extends javax.swing.JFrame {
         this.username = username;
         this.userId = userId;
         initComponents();
+        setupCartBadge();
+        updateCartNotification(this.userId);
         
         // Window setup
         setTitle("ReWear - Checkout");
@@ -43,6 +46,37 @@ public class Checkout extends javax.swing.JFrame {
 
         loadOrderSummary();
         initBackend();
+    }
+    // ==========================================
+    // --- CART BADGE SETUP AND UPDATE LOGIC ----
+    // ==========================================
+    private void setupCartBadge() {
+        lblCartBadge = new javax.swing.JLabel("0", javax.swing.SwingConstants.CENTER);
+        // Position it over the top-right corner of the cart icon (jButton11)
+        lblCartBadge.setBounds(1510, 2, 20, 20); 
+        lblCartBadge.setOpaque(true);
+        lblCartBadge.setBackground(new java.awt.Color(220, 53, 69)); // Red color
+        lblCartBadge.setForeground(java.awt.Color.WHITE);
+        lblCartBadge.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 12));
+        lblCartBadge.setVisible(false); // Hidden by default
+
+        // Add it to the top navigation panel (jPanel3) at index 0 so it stays on top
+        jPanel3.add(lblCartBadge, 0);
+        jPanel3.repaint();
+    }
+
+    private void updateCartNotification(int userId) {
+        if (lblCartBadge == null) return;
+        
+        int totalItems = cartController.getCartCount(userId);
+        
+        if (totalItems > 0) {
+            lblCartBadge.setText(String.valueOf(totalItems));
+            lblCartBadge.setVisible(true); 
+        } else {
+            lblCartBadge.setText("0");
+            lblCartBadge.setVisible(false); 
+        }
     }
 
     /**

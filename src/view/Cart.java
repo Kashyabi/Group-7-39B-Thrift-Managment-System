@@ -15,6 +15,7 @@ public class Cart extends javax.swing.JFrame {
     // Dynamic components
     private JPanel cartItemsPanel;
     private JLabel subtotalValue, discountValue, totalValue;
+    private JLabel lblCartBadge; // Added badge variable
 
     public Cart() {
         this("Guest", -1);
@@ -92,6 +93,16 @@ public class Cart extends javax.swing.JFrame {
         });
         navbar.add(bellBtn);
 
+        // --- THE CART NOTIFICATION BADGE ---
+        lblCartBadge = new JLabel("0", SwingConstants.CENTER);
+        lblCartBadge.setBounds(1510, 2, 20, 20); // Positioned at the top right of the cart icon
+        lblCartBadge.setOpaque(true);
+        lblCartBadge.setBackground(new Color(220, 53, 69)); // Red color
+        lblCartBadge.setForeground(Color.WHITE);
+        lblCartBadge.setFont(new Font("Arial", Font.BOLD, 12));
+        lblCartBadge.setVisible(false); // Hidden by default
+        navbar.add(lblCartBadge, 0); // Added at index 0 to stay on top
+
         // Cart button (current page)
         JButton cartBtn = createNavButton("/group7/rewear/cartticon.png");
         cartBtn.setBounds(1477, 6, 50, 40);
@@ -152,7 +163,7 @@ public class Cart extends javax.swing.JFrame {
     }
 
     // ========================
-    // SUMMARY PANEL (SubTotal, Discount, Total, Checkout Button)
+    // SUMMARY PANEL
     // ========================
     private void buildSummaryPanel(JPanel parent) {
         JPanel summaryPanel = new JPanel();
@@ -243,8 +254,9 @@ public class Cart extends javax.swing.JFrame {
             }
         }
 
-        // Update totals
+        // Update totals and the badge count
         updateTotals(items);
+        updateCartNotification(userId);
 
         cartItemsPanel.revalidate();
         cartItemsPanel.repaint();
@@ -401,6 +413,24 @@ public class Cart extends javax.swing.JFrame {
     private void refreshTotals() {
         List<CartItem> items = cartController.getCartItems(userId);
         updateTotals(items);
+        updateCartNotification(userId); // Updates the badge when item quantity changes
+    }
+    
+    // ========================
+    // CART NOTIFICATION LOGIC
+    // ========================
+    private void updateCartNotification(int currentUserId) {
+        if (lblCartBadge == null) return;
+        
+        int totalItems = cartController.getCartCount(currentUserId);
+        
+        if (totalItems > 0) {
+            lblCartBadge.setText(String.valueOf(totalItems));
+            lblCartBadge.setVisible(true); 
+        } else {
+            lblCartBadge.setText("0");
+            lblCartBadge.setVisible(false); 
+        }
     }
 
     // ========================
